@@ -4,13 +4,14 @@ void chooseColor({
   required BuildContext context,
   required Size size,
   required Function(Color) selectedColor,
+  String? title,
 }) {
   showDialog(
     context: context,
     builder: (ctx) {
       return AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: const Text("Choose Color"),
+        title: title == null ? null : Text(title),
         content: SizedBox(
           height: size.height * 0.3,
           width: size.width * 0.2,
